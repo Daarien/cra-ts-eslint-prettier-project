@@ -1,6 +1,8 @@
 import React from 'react';
 import logo from './logo.svg';
 import './App.css';
+import Comp from './Comp';
+import ClassComp from './ClassComp';
 
 const App: React.FC = () => {
   return (
@@ -19,8 +21,12 @@ const App: React.FC = () => {
           Learn React
         </a>
       </header>
+      <h1>Comp</h1>
+      <Comp />
+      <h1>Class Comp</h1>
+      <ClassComp />
     </div>
   );
-}
+};
 
 export default App;

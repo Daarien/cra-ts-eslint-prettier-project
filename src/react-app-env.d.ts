@@ -1,1 +1,1 @@
-/// <reference types="react-scripts" />
+type Obj<T = any> = Record<string, T>;
