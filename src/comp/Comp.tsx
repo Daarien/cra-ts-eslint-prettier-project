@@ -1,8 +1,8 @@
 import React, { useState, useEffect, MouseEvent } from 'react';
-import { Button } from '@material-ui/core';
-import { take, isResponseOk } from './core';
+import Button from './Button';
+import { take, isResponseOk } from '../core';
 
-export interface Data {
+export interface Data extends Obj {
   userId: number;
   id: number;
   title: string;
@@ -33,7 +33,7 @@ export default function SomeComponent() {
     });
   }, []);
 
-  // useEffect(() => console.info(data), [data]);
+  useEffect(() => console.info(data), [data]);
 
   const [count, setCount] = useState(0);
 
@@ -52,12 +52,20 @@ export default function SomeComponent() {
       <div>
         <h3>Counter</h3>
         <p className="count-viewer">{count}</p>
-        <Button color="primary" variant="contained" onClick={increment} style={{ marginRight: 10 }}>
+        <Button variant="primary" onClick={increment} style={{ marginRight: 10 }}>
           +
         </Button>
-        <Button color="secondary" variant="contained" onClick={decrement}>
+        <Button variant="secondary" onClick={decrement}>
           -
         </Button>
+      </div>
+      <div>
+        <h3>jsonplaceholder</h3>
+        <ul style={{ textAlign: 'left' }}>
+          {Object.keys(data).map(i => (
+            <li key={i}>{`${i} : ${data[i]}`}</li>
+          ))}
+        </ul>
       </div>
     </div>
   );
