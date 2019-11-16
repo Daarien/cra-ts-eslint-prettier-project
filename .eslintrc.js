@@ -30,12 +30,16 @@ module.exports = {
     'no-return-await': 1,
     'no-else-return': 1,
     curly: [2, 'all'],
+    'no-debugger': 1,
     'no-console': 0,
 
+    // 'react/button-has-type': 0,
     'react/no-unused-state': 1,
     'react/state-in-constructor': 0,
-    'react/jsx-one-expression-per-line': 0,
     'react/destructuring-assignment': 0,
+
+    'react/jsx-props-no-spreading': 0,
+    'react/jsx-one-expression-per-line': 0,
     'react/jsx-filename-extension': [1, { extensions: ['.tsx'] }],
 
     'jsx-a11y/no-static-element-interactions': 1,
